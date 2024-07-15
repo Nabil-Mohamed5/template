@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .btn {
+        @apply bg-black text-white px-10 py-3 rounded min-w-36;
+    }
+    .radial-gradient {
+        @media (max-width: 787px) {
+            background: rgb(0 0 0 / 90%);
+        }
+    }
+    .p-style {
+        @apply pb-6 md:text-lg  text-zinc-600 font-medium;
+    }
+
+    .service::after {
+        content: "";
+        position: absolute;
+        width: 30%;
+        height: 2px;
+        background: #0f101096;
+        top: 50%;
+        right: 110%;
+    }
+    .step-icon::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background: #9297a096;
+        left: 38%;
+        top: 120%;
+    }
+    .step-container:first-child .step-icon::after {
+        height: calc(100% + 2rem);
+    }
+    .step-container:nth-child(2) .step-icon::after {
+        height: calc(100% + 2rem);
+    }
+    .step-container:last-child .step-icon::after {
+        display: none;
+    }
+    .arro-container {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-color: #c9e3ecc1;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        padding: 5px;
+        margin: 8px;
+        cursor: pointer;
+        opacity: 1;
+        transform: translateY(20px);
+        transition:
+            opacity 0.3s,
+            transform 0.3s;
+    }
+    .arrow-container.show {
+        transform: translateY(0);
+        opacity: 1;
+        animation: moveUpDown 1s infinite;
+    }
+
+    @keyframes moveUpDown {
+        0% {
+            transform: translateY(11px);
+        }
+
+        25% {
+            transform: translateY(7px);
+        }
+
+        50% {
+            transform: translateY(0px);
+        }
+
+        70% {
+            transform: translateY(-9px);
+        }
+
+        85% {
+            transform: translateY(3px);
+        }
+
+        100% {
+            transform: translateY(11px);
+        }
+    }
+
+    .container-i {
+        color: #6800d1;
+        font-size: 27px;
+    }
+
+    .div-footer {
+        width: calc(100% / 4.5);
+        @media (max-width: 787px) {
+            width: 100%;
+        }
+    }
+}
